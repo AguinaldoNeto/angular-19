@@ -1,14 +1,13 @@
-import { Component } from "@angular/core";
-import { CalculatorComponent } from "./calculator/calculator.component";
-
+import { Component } from '@angular/core';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { SaleListComponent } from './sale-list/sale-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CalculatorComponent],
+  imports: [SaleListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-
   title = 'Basic Concepts';
 }
