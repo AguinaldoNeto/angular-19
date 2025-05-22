@@ -1,18 +1,39 @@
 <div class="container">
   <div class="form-box">
-    <form>
-      <h2>Calculadora</h2>
-        <label for="numero1">Número 1</label>
-        <input type="number" name="numero1" id="numero1">
+    <form #calculatorForms="ngForm" (ngSubmit)="calculateResult()">
+      <h2>Calculator</h2>
+      <label for="numberOne">Number Two</label>
+      <input
+        type="number"
+        name="numberOne"
+        id="numberOne"
+        [(ngModel)]="numberOne"
+      />
 
-        <label for="numero2">Número 2</label>
-        <input type="number" name="numero2" id="numero2">
+      <label for="numberTwo">Number Two</label>
+      <input
+        type="number"
+        name="numberTwo"
+        id="numberTwo"
+        [(ngModel)]="numberTwo"
+      />
 
-        <button type="submit">Somar</button>
+      <button type="submit">Add</button>
     </form>
 
-    <div class="result-display">
-      <p>Resultado: <span id="result">Valor</span></p>
+    <!-- PRECISA DO COMM ON MODULE
+    <div class="result-display" *ngIf="result">
+      <p>Resultado: <span id="result"> {{ result }}</span></p>
     </div>
+    -->
+
+    @if(result) {
+    <!-- != 0, null, undefined -->
+    <div class="result-display">
+      <p>
+        Resultado: <span id="result"> {{ result }}</span>
+      </p>
+    </div>
+    }
   </div>
 </div>
